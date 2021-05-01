@@ -6,7 +6,6 @@ chardet==3.0.4
 distlib==0.3.1
 dj-database-url==0.5.0
 Django==3.1.2
-django-cors-headers==3.5.0
 django-heroku==0.3.1
 django-summernote==0.8.11.6
 django-storages==1.11.1
@@ -23,7 +22,6 @@ PyYAML==5.3.1
 requests==2.24.0
 six==1.15.0
 sqlparse==0.4.1
-uritemplate==3.0.1
 urllib3==1.25.11
 virtualenv==20.0.33
 whitenoise==5.2.0

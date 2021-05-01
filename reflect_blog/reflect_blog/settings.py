@@ -162,5 +162,5 @@ AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
-MEDIA_URL = 'reflectblog.s3.us-east-2.amazonaws.com/static/media'
+MEDIA_URL = 'reflectblog.s3.us-east-2.amazonaws.com/static/media/'
 django_heroku.settings(locals(), staticfiles=False)

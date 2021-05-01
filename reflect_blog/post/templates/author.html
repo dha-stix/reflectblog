@@ -1,0 +1,75 @@
+{% extends 'base.html'%}
+{%block static%}
+    {% load static %}
+{%endblock%}
+{% block meta_tags %}
+     <link rel="stylesheet" href="{% static 'styles/author.css' %}">
+    <link rel="shortcut icon" href="{%static 'images/logo.png' %}" type="img/png">
+ <meta name="description" content="David Asaolu | Content Creator @Reflect Blog" />
+
+<!-- Schema.org markup for Google+ -->
+<meta itemprop="name" content="David Asaolu | Content Creator @Reflect Blog">
+<meta itemprop="description" content="David Asaolu is an experienced Web Developer & Technical Content Creator based in Lagos, Nigeria">
+<meta itemprop="image" content="{% static 'images/logo.png' %}">
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@BeginnerFriend1">
+<meta name="twitter:title" content="David Asaolu | Content Creator @Reflect Blog">
+<meta name="twitter:description" content=>
+<meta name="twitter:creator" content="@Arshadayvid">
+<!-- Twitter summary card with large image must be at least 280x150px -->
+<meta name="twitter:image:src" content="{% static 'images/author.png' %}">
+
+<!-- Open Graph data -->
+<meta property="og:title" content="David Asaolu | Content Creator @Reflect Blog" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="{% static 'images/author.png' %}" />
+<meta property="og:description" content="David Asaolu is an experienced Web Developer & Technical Content Creator based in Lagos, Nigeria" />
+<meta property="og:site_name" content="Reflect Blog" />
+<!--<meta property="article:published_time" content="2013-09-17T05:59:00+01:00" />-->
+<!--<meta property="article:modified_time" content="2013-09-16T19:08:47+01:00" />-->
+<meta property="article:section" content="David Asaolu is an experienced Web Developer & Technical Content Creator based in Lagos, Nigeria" />
+{% endblock %}
+{% block content %}
+ <header>
+        <a href="{% url 'home_page' %}" id="header--logo">Reflect Blog</a>
+    </header>
+
+    <main class="creator">
+        <div class="creator--details">
+            <img src="{% static 'images/author.png' %}" alt="David Asaolu" class="creator--picture" >
+            <h4>David Asaolu</h4>
+            <p class="creator--title">Author & Web Developer</p>
+            <div class="creator--links">
+                <a href="https://www.linkedin.com/in/david-asaolu234/" target="_blank" class="creator--link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.facebook.com/asaolu.david.9" target="_blank" class="creator--link">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/Arshadayvid" target="_blank" class="creator--link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+            </div>
+        </div>
+
+
+        <section  class="contact">
+            <h3>Send me a message <i class="fas fa-envelope"></i></h3>
+            <form action="https://formspree.io/f/xeqvejyd" method="POST" class="contact--form">
+                <label for="email"> Your email:</label>
+                    <input type="email" name="_reply_to" class="contact--form--email" required>
+
+                <label for="message">  Your message:</label>
+                <textarea name="message" cols="50" rows="5" class="contact--form--message" required></textarea>
+
+            <button type="submit" class="contact--formBtn">SEND</button>
+        </form>
+        </section>
+
+
+    </main>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{%block static%}
+    {% load static %}
+{%endblock%}
+{% block meta_tags %}
+     <link rel="stylesheet" href="{% static 'styles/post.css' %}">
+    <link rel="shortcut icon" href="{%static 'images/logo.png' %}" type="img/png">
+    <meta name="description" content="{{post.short_description}}" />
+
+<!-- Schema.org markup for Google+ -->
+<meta itemprop="name" content="{{post.title}}">
+<meta itemprop="description" content="{{post.short_description}}">
+<meta itemprop="image" content="{% static 'images/logo.png' %}" />">
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@BeginnerFriend1">
+<meta name="twitter:title" content="{{post.title}}">
+<meta name="twitter:description" content="{{post.description}}">
+<meta name="twitter:creator" content="@Arshadayvid">
+<!-- Twitter summary card with large image must be at least 280x150px -->
+<meta name="twitter:image:src" content="{% static 'images/logo.png' %}">
+
+<!-- Open Graph data -->
+<meta property="og:title" content="{{post.title}}" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="{% static 'images/logo.png' %}" />
+<meta property="og:description" content="{{post.short_description}}" />
+<meta property="og:site_name" content="Reflect Blog" />
+<meta property="article:published_time" content="{{post.timestamp}}" />
+<meta property="article:modified_time" content="{{post.timestamp}}" />
+<meta property="article:section" content="{{post.short_description}}" />
+<meta property="article:tag" content="{{post.short_description}}" />
+
+{% endblock %}
+{%block content%}
+<header>
+        <a href="{% url 'home_page' %}" id="header--logo">Reflect Blog</a>
+    </header>
+
+    <main>
+        <h2 class="post--title">{{post.title}}</h2>
+        <small>Posted on {{post.timestamp}}</small>
+        <p class="post--author">by <span>{{post.author}}</span></p>
+        <div>
+            {{post.content | safe}}
+        </div>
+    </main>
+{% endblock %}

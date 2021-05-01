@@ -1,0 +1,74 @@
+/* GENERAL STYLING */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #f7f3f5;
+}
+body {
+  background-color: #1a1a2e;
+}
+main {
+  width: 80%;
+  margin: 15px auto 30px auto;
+  min-height: 120vh;
+}
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+#header--logo {
+  text-decoration: none;
+  font-size: 18px;
+  color: #706c61;
+  font-weight: 500;
+  font-size: 26px;
+  font-weight: bolder;
+}
+#header--logo:hover {
+  color: #d4c7a2;
+}
+footer {
+  margin-top: 50px;
+  width: 100%;
+  min-height: 10vh;
+  background-color: #282849;
+  border-top: 1px solid #58588f;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+footer > p {
+  margin-bottom: 10px;
+}
+.author {
+  color: #f9f6f7;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.post--author {
+  margin-bottom: 30px;
+}
+.post--author > span {
+  color: #d4c7a2;
+}
+main > small,
+.post--content,
+.post--title {
+  margin-bottom: 15px;
+  color: #f9f6f7;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 90%;
+    padding: 50px 30px;
+  }
+}

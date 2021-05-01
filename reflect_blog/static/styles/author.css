@@ -1,0 +1,161 @@
+/* GENERAL STYLING */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #f7f3f5;
+}
+body {
+  background-color: #1a1a2e;
+}
+.creator {
+  width: 80%;
+  margin: 30px auto 30px auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 80vh;
+}
+.creator--details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #d4c7a2;
+  padding: 10px 50px 10px 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+form > label {
+  color: #ccccd1;
+}
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+#header--logo {
+  text-decoration: none;
+  font-size: 18px;
+  color: #706c61;
+  font-weight: 500;
+  font-size: 26px;
+  font-weight: bolder;
+}
+#header--logo:hover {
+  color: #d4c7a2;
+}
+footer {
+  margin-top: 50px;
+  width: 100%;
+  min-height: 10vh;
+  background-color: #282849;
+  border-top: 1px solid #58588f;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+footer > p {
+  margin-bottom: 10px;
+}
+.author {
+  color: #f9f6f7;
+  font-weight: 800;
+  text-decoration: none;
+}
+.creator--picture {
+  width: 200px;
+  height: 230px;
+  margin-bottom: 30px;
+}
+.creator--title,
+.fa-twitter,
+.fa-facebook-f,
+.fa-linkedin-in {
+  color: #706c61;
+}
+.creator--links {
+  width: 100%;
+  align-items: center;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.creator--link {
+  color: #d4c7a2;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.contact > h3,
+.fa-envelope {
+  text-transform: uppercase;
+  font-size: 24px;
+  color: #58588f;
+  text-align: center;
+}
+.contact--form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.contact--form > * {
+  margin-top: 20px;
+}
+.contact--form--email {
+  margin-bottom: 20px;
+  height: 35px;
+  width: 50%;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid #d4c7a2;
+  border-style: dashed;
+  padding: 7px;
+}
+.contact--form--message {
+  width: 80%;
+  min-height: 200px;
+  border: 2px solid #d4c7a2;
+  border-style: dashed;
+  padding: 7px;
+  outline: none;
+  background-color: transparent;
+}
+.contact--formBtn {
+  width: 40%;
+  margin-top: 30px;
+  height: 40px;
+  outline: none;
+  background-color: #282849;
+  border: 2px solid #d4c7a2;
+  border-style: dashed;
+  cursor: pointer;
+  font-size: 16px;
+}
+.contact--formBtn:hover {
+  background-color: #58588f;
+}
+@media screen and (max-width: 600px) {
+  .creator--details {
+    width: 80%;
+  }
+  .creator--picture {
+    width: 100%;
+    height: fit-content;
+  }
+  .contact--form--email,
+  .contact--form--message,
+  .contact--formBtn {
+    width: 250px;
+  }
+}

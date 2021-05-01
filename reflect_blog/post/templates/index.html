@@ -1,0 +1,82 @@
+{% extends 'base.html'%}
+{%block static%}
+    {% load static %}
+{%endblock%}
+{% block meta_tags %}
+     <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+    <link rel="shortcut icon" href="{%static 'images/logo.png' %}" type="img/png">
+    <meta name="description" content="An educative personal blog that features information on various Techonologies for beginners and software developers, personal and life experience" />
+
+<!-- Schema.org markup for Google+ -->
+<meta itemprop="name" content="Reflect Blog">
+<meta itemprop="description" content="An educative personal blog that features information on various Techonologies for beginners and software developers, personal and life experience">
+<meta itemprop="image" content="{% static 'images/logo.png' %}">
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@BeginnerFriend1">
+<meta name="twitter:title" content="Reflect Blog">
+<meta name="twitter:description" content="An educative personal blog that features information on various Techonologies for beginners and software developers, school, personal and life experience">
+<meta name="twitter:creator" content="@Arshadayvid">
+<!-- Twitter summary card with large image must be at least 280x150px -->
+<meta name="twitter:image:src" content="{% static 'images/logo.png' %}">
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Reflect Blog" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="{% static 'images/logo.png' %}" />
+<meta property="og:description" content="An educative personal blog that features information on various Techonologies for beginners and software developers, school, personal and life experience" />
+<meta property="og:site_name" content="Reflect Blog" />
+<!--<meta property="article:published_time" content="2013-09-17T05:59:00+01:00" />-->
+<!--<meta property="article:modified_time" content="2013-09-16T19:08:47+01:00" />-->
+<meta property="article:section" content="An educative personal blog that features information on various Techonologies for beginners and software developers, personal and life experience" />
+<meta property="article:tag" content="An educative personal blog that features information on various Techonologies for beginners and software developers, personal and life experience" />
+{% endblock %}
+
+{% block content %}
+<header>
+        <a href="{% url 'home_page' %}" id="header--logo">Reflect Blog</a>
+        <div class="header--search">
+            <form method="get" action="">
+                 <input type="text" placeholder="Search keyword" class="search--bar" name="query"/>
+                <button id="search--btn">Search</button>
+            </form>
+        </div>
+        <a href="{% url 'author_page' %}" target="_blank" id="header--link">
+           <p class="writers--link">Writer's Corner</p>
+            <i class="fas fa-envelope-open-text"></i>
+        </a>
+    </header>
+
+    <main>
+        <section class="filter">
+            <form class="filter--form" method="get" action="">
+            <label for="filter_by">
+                <select name="filter_by">
+                    <option value="Motivation">Motivation</option>
+                    <option value="Lifestyle">Lifestyle</option>
+                    <option value="School Life">School Life</option>
+                    <option value="Tech">Tech</option>
+                </select>
+            </label>
+            <button class="filterBtn">FILTER</button>
+        </form>
+        </section>
+
+        {%if posts %}
+            {% for post in posts %}
+                <a class="post" href="{% url 'post_page' post.slug %}">
+                    <small>{{post.category}}</small>
+                    {{post.title}}
+                </a>
+            {%endfor%}
+             {%else%}
+                <a class="post" href="{% url 'home_page' %}">
+                    <small>For this search</small>
+                    No result found
+                </a>
+        {%endif%}
+
+
+    </main>
+{% endblock %}

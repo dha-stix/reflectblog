@@ -119,17 +119,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+
+ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 AWS_SECRET_KEY = os.environ.get('AWS_SECRET_KEY')
-AWS_S3_CUSTOM_DOMAIN = os.environ.get('AWS_LINK')
+AWS_S3_CUSTOM_DOMAIN ="reflectblog.s3.us-east-2.amazonaws.com"
+AWS_STORAGE_BUCKET_NAME="reflectblog"
+AWS_LINK="reflectblog.s3.us-east-2.amazonaws.com"
 
 AWS_LOCATION = 'static'
 
@@ -156,6 +157,7 @@ SUMMERNOTE_CONFIG = {
 
 }
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
